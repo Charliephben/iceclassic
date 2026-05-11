@@ -71,7 +71,7 @@ def plot_date_time_distribution(df_1: pd.DataFrame,
     title += f", N={len(y_values_1)}"
 
     axs[0, 1].scatter(x_values_1, y_values_1,
-                      color='red', label='2025 Predictions',
+                      color='red', label='Student Predictions',
                       edgecolors='black', linewidths=1.0,
                       s=100)
     axs[0, 1].scatter(x_values_2, y_values_2,
@@ -151,12 +151,12 @@ predictions.dropna(inplace=True)
 fig = plot_date_time_distribution(predictions, 'Prediction', 'decimal time',
                             past_break_up_dates, 'Break up dates', 'decimal time',
                             estimator='mle',
-                            title='Historic Breakup (with density estimates) and 2025 Predictions');
+                            title='Historic Breakup (with density estimates) and Student Predictions');
 fig.savefig(get_path('predictions_all.svg'))
 
 fig = plot_date_time_distribution(predictions, 'Prediction', 'decimal time',
                             past_break_up_dates, 'Break up dates', 'decimal time',
                             estimator='mle',
-                            title='Historic Breakup (with density estimates) and 2025 Predictions',
+                            title='Historic Breakup (with density estimates) and Student Predictions',
                             plot_limits=(60, 155));
 fig.savefig(get_path('predictions.svg'))
